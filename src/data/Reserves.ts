@@ -1,13 +1,13 @@
-import { TokenAmount, Pair, Currency } from '@uniswap/sdk'
+import { TokenAmount, Pair, Currency } from '@sethdao/dex-sdk'
 import { useMemo } from 'react'
-import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
+import { SethPair__factory } from '@sethdao/dex-core-contracts'
 import { Interface } from '@ethersproject/abi'
 import { useActiveWeb3React } from '../hooks'
 
 import { useMultipleContractSingleData } from '../state/multicall/hooks'
 import { wrappedCurrency } from '../utils/wrappedCurrency'
 
-const PAIR_INTERFACE = new Interface(IUniswapV2PairABI)
+const PAIR_INTERFACE = new Interface(SethPair__factory.abi)
 
 export enum PairState {
   LOADING,
